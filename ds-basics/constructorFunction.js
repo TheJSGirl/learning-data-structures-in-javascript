@@ -12,3 +12,5 @@ const user2 = new User('aakriti', 'negi', 20, 'female');
 
 console.log(user1);
 console.log(user2);
+
+User.prototype.emailDomain = "@gmail.com";
