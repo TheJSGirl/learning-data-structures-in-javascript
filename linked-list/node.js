@@ -71,9 +71,26 @@ LinkedList.prototype.removeHead = function(){
   return oldHead;
 }
 
+//create method to remove tail
+LinkedList.prototype.removeTail = function(){
+  
+  //if linkedlist is empty
+  if(!this.tail) return null;
 
+  //if list is not empty
+  const beforDeletingValue = this.tail.value;
 
+  //tail will reference to previous of node
+  this.tail = this.tail.prev;
 
+  //if tail exist
+  if(this.tail) return this.tail.next = null;
+
+  //if tail not exist
+  else this.head = null;
+
+  return beforDeletingValue;
+}
 
 
 const ll = new LinkedList();
@@ -85,12 +102,17 @@ ll.addToHead(200);
 ll.addToTail(300);
 
 //adding node to the tail of node
-// ll.addToTail(100);
-// ll.addToTail(200);
+ll.addToTail(100);
+ll.addToTail(200);
 // ll.addToTail(300);
+ll.addToHead(300);
 
-//removing node from linkedList
-console.log(ll.removeHead());
+//removing node from head of linkedList
+// console.log(ll.removeHead());
+
+//removing node from tail of list
+console.log(ll.removeTail());
+
 
 
 console.log(ll);
