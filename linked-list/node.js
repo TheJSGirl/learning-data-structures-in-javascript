@@ -50,19 +50,47 @@ LinkedList.prototype.addToTail = function(value){
 }
 
 
+//create method to remove head
+LinkedList.prototype.removeHead = function(){
+
+  //if linked list is empty
+  if(!this.head) return null;
+
+  //list is not empty than save the value of head node to a variable
+  const oldHead = this.head.value;
+
+  //now head will reference to next to head node 
+  this.head = this.head.next;
+
+  //if head exist
+  if(this.head) return this.head.prev = null;
+
+  //if no head exist 
+  else this.tail = null;
+
+  return oldHead;
+}
+
+
+
+
 
 
 const ll = new LinkedList();
 
 //adding node to the head of node
-// ll.addToHead(100);
-// ll.addToHead(200);
+ll.addToHead(100);
+ll.addToHead(200);
 // ll.addToHead(300);
+ll.addToTail(300);
 
 //adding node to the tail of node
-ll.addToTail(100);
-ll.addToTail(200);
-ll.addToTail(300);
+// ll.addToTail(100);
+// ll.addToTail(200);
+// ll.addToTail(300);
+
+//removing node from linkedList
+console.log(ll.removeHead());
 
 
 console.log(ll);
