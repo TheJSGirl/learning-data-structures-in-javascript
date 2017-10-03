@@ -33,9 +33,36 @@ LinkedList.prototype.addToHead = function (value){
   this.head = newNode;
 };
 
+
+//create addToTail method to add nodes from tail of node
+LinkedList.prototype.addToTail = function(value){
+  //create node
+  const newNode = new Node(value, null, this.tail);
+
+  //if tail exist
+  if(this.tail) this.tail.next = newNode;
+  
+  //if tail doest exist
+  else this.head = newNode;
+
+  //add newNode to tail 
+  this.tail = newNode;
+}
+
+
+
+
 const ll = new LinkedList();
 
-ll.addToHead(100);
-ll.addToHead(200);
-ll.addToHead(300);
+//adding node to the head of node
+// ll.addToHead(100);
+// ll.addToHead(200);
+// ll.addToHead(300);
+
+//adding node to the tail of node
+ll.addToTail(100);
+ll.addToTail(200);
+ll.addToTail(300);
+
+
 console.log(ll);
