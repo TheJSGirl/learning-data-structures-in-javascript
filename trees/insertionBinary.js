@@ -5,6 +5,7 @@ function BST(value){
     this.right = null;
 }
 
+//insertion in binary tree
 BST.prototype.insert = function(value){
     if(value <= this.value){
         if(!this.left){
@@ -23,6 +24,23 @@ BST.prototype.insert = function(value){
     }
 };
 
+//serching an element in a tree
+BST.prototype.search = function(value){
+    if(this.value === value) return true;
+    else if(this.value <= value){
+        if(!this.right) return false;
+        else{
+            return this.right.search(value);
+        }
+    }
+    else if(this.value > value){
+        if(!this.right) return false;
+        else{
+            return this.left.search(value);
+        }
+    }
+}
+
 
 let bst = new BST(50);
 bst.insert(30);
@@ -39,4 +57,10 @@ bst.insert(10);
 
 
 
-console.log(bst.right.left.left);
+// console.log(bst.right.left.left);
+
+//search element in a tree
+console.log(bst.search(85)); //true
+console.log(bst.search(15)); //false
+
+
