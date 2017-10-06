@@ -133,6 +133,8 @@ ll.addToTail(3000);
 
 //search value from list
 console.log('searched value is: ',ll.search(300));
+console.log('searched value is: ',ll.search(100));
+
 
 
 
